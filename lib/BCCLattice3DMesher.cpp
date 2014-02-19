@@ -100,6 +100,10 @@ TetMesh* BCCLattice3DMesher::mesh(bool snap, bool verbose)
     //--------------------------------
     delete[] lattice->labels;
     lattice->labels = NULL;
+
+    delete lattice->volume;
+    lattice->volume = NULL;
+
     for(unsigned int i=0; i < lattice->cut_cells.size(); i++)
     {
         Vertex3D *dual = lattice->cut_cells[i]->vert[C];

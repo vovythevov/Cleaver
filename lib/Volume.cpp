@@ -44,6 +44,15 @@
 namespace Cleaver
 {
 
+Volume::~Volume()
+{
+    for (size_t i = 0; i < this->m_fields.size(); ++i)
+    {
+    delete this->m_fields[i];
+    this->m_fields[i] = 0;
+    }
+}
+
 Volume::Volume(const Cleaver::Volume &volume)
 {
     this->m_fields = volume.m_fields;

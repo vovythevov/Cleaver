@@ -54,6 +54,7 @@ class Volume : public AbstractVolume
 {
 public:
     Volume(){}
+    ~Volume();
     Volume(const Volume &volume);
     Volume(const std::vector<ScalarField*> &fields, int width=0, int height=0, int depth=0);
     Volume(const std::vector<ScalarField*> &fields, vec3 size);
